@@ -28,7 +28,7 @@ export const Home: NextPage<HomepageData> = (props) => {
 
 export const getServerSideProps = async () => {
   const res = await fetch(
-    "http://localhost:1337/api/homepage?populate=carousel"
+    `${process.env.API_URL}/homepage?populate=carousel&token=${process.env.API_TOKEN}`
   );
   const data = await res.json();
 
