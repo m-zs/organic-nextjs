@@ -3,7 +3,8 @@
     "next/core-web-vitals",
     "plugin:prettier/recommended",
     "plugin:jest/recommended",
-    "plugin:testing-library/react"
+    "plugin:testing-library/react",
+    "plugin:storybook/recommended"
   ],
   "plugins": ["prettier"],
   "rules": {
