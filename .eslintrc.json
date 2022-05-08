@@ -8,6 +8,8 @@
   ],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@next/next/no-document-import-in-page": "off",
+    "@next/next/no-page-custom-font": "off"
   }
 }
