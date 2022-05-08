@@ -9,7 +9,9 @@ export const Home: NextPage<HomepageData> = (props) => {
       <Head>
         <title></title>
       </Head>
-      <div>home</div>;
+      <div>
+        <h1>home</h1>
+      </div>
     </>
   );
 };
