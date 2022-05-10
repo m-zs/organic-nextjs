@@ -7,7 +7,7 @@ import { fetchFromCMS } from "./common";
 // shared data cant be fetched from _app right now
 export const fetchLayoutData = async (locale: Locale): Promise<Layout> => {
   const query = qs.stringify({
-    populate: ["*"],
+    populate: ["links"],
     locale,
   });
 
