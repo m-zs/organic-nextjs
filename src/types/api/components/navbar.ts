@@ -1,8 +1,11 @@
+import { AttributesData } from "../common";
+
 export interface NavLink {
+  id: number;
   text: string;
   href: string;
 }
 
-export interface Navbar {
+export type Navbar = AttributesData<{
   links: NavLink[];
-}
+}>;
