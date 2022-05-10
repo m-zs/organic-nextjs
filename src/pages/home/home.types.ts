@@ -3,6 +3,7 @@ import {
   PageMetadata,
   PublishableAttributesData,
 } from "src/types/api";
+import { PageWithLayout } from "src/types/app";
 
 export type HomepageData = PublishableAttributesData<{
   locale: string;
@@ -10,3 +11,5 @@ export type HomepageData = PublishableAttributesData<{
   content_blocks: Record<number, PublishableAttributesData<{}>>;
   carousel: PublishableAttributesData<Carousel>;
 }>;
+
+export type Homepage = PageWithLayout<HomepageData>;

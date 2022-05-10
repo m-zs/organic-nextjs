@@ -1,9 +1,10 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import { HomepageData } from "./home.types";
+import { Locale } from "src/types/internalization";
+import { Homepage } from "./home.types";
 import { getHomeData } from "./home.utils";
 
-export const Home: NextPage<HomepageData> = (props) => {
+export const Home: NextPage<Homepage> = (props) => {
   return (
     <>
       <Head>
@@ -16,8 +17,8 @@ export const Home: NextPage<HomepageData> = (props) => {
   );
 };
 
-export const getStaticProps = async () => {
-  const data = await getHomeData();
+export const getStaticProps = async ({ locale }: { locale: Locale }) => {
+  const data = await getHomeData(locale);
 
   return {
     props: { data },
