@@ -1,9 +1,12 @@
 import qs from "qs";
+import { Locale } from "src/types/internalization";
 import { fetchFromCMS } from "src/utils/api";
-import { HomepageData } from "./home.types";
+import { fetchLayoutData } from "src/utils/api/layout";
+import { Homepage, HomepageData } from "./home.types";
 
-export const getHomeData = async (): Promise<HomepageData> => {
+export const getHomeData = async (locale: Locale): Promise<Homepage> => {
   const query = qs.stringify({
+    locale,
     populate: [
       "content_blocks.image",
       "content_blocks.button",
@@ -13,5 +16,10 @@ export const getHomeData = async (): Promise<HomepageData> => {
     ],
   });
 
-  return await fetchFromCMS(`homepage?${query}`);
+  const [page, layout] = await Promise.all([
+    fetchFromCMS<HomepageData>(`homepage?${query}`),
+    fetchLayoutData(locale),
+  ]);
+
+  return { page, layout };
 };
