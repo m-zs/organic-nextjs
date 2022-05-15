@@ -1,11 +1,15 @@
-import { useLayoutEffect, useState } from "react";
+import { useState } from "react";
+import { isBrowser } from "src/utils/common";
+import { useIsomorphicLayoutEffect } from "./isomorphic-layout-effect/isomorphic-layout-effect";
 
 export const useMatchMedia = (query: string): boolean => {
   const [isMatchingMediaQuery, setIsMatchingMediaQuery] = useState(
     window?.matchMedia(query).matches
   );
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
+    if (!isBrowser()) return;
+
     const handleMq = ({ matches }: { matches: boolean }) => {
       if (matches) {
         return setIsMatchingMediaQuery(true);
@@ -13,8 +17,8 @@ export const useMatchMedia = (query: string): boolean => {
 
       setIsMatchingMediaQuery(false);
     };
-    const mq = window.matchMedia(query);
 
+    const mq = window.matchMedia(query);
     mq.addListener(handleMq);
 
     return () => {
