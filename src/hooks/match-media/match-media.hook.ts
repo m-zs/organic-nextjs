@@ -4,7 +4,7 @@ import { useIsomorphicLayoutEffect } from "./isomorphic-layout-effect/isomorphic
 
 export const useMatchMedia = (query: string): boolean => {
   const [isMatchingMediaQuery, setIsMatchingMediaQuery] = useState(
-    window?.matchMedia(query).matches
+    isBrowser() && window.matchMedia(query).matches
   );
 
   useIsomorphicLayoutEffect(() => {
