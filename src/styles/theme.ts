@@ -19,13 +19,16 @@ export const theme = {
     regular: "0.3s",
   },
   containers: {
-    big: "1200px",
+    lg: "1200px",
+    md: "800px",
+    sm: "640px",
+    xs: "420px",
   },
   breakpoints: {
     ...breakpoints,
     up: (breakpoint: keyof typeof breakpoints) =>
-      `@media (min-width: ${breakpoint})`,
+      `@media (min-width: ${breakpoints[breakpoint]})`,
     down: (breakpoint: keyof typeof breakpoints) =>
-      `@media (max-width: ${breakpoint})`,
+      `@media (max-width: ${breakpoints[breakpoint]})`,
   },
 };
