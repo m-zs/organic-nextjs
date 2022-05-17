@@ -1,0 +1,5 @@
+<svg id="shopping-cart" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 34.556 31">
+  <path id="Path_3" data-name="Path 3" d="M11.133,20.248h18.36a1.013,1.013,0,0,0,.973-.734L34.517,5.34a1.012,1.012,0,0,0-.973-1.291H8.8L8.075.793A1.013,1.013,0,0,0,7.086,0H1.012a1.012,1.012,0,1,0,0,2.025H6.274L9.93,18.473A3.037,3.037,0,0,0,11.136,24.3H29.494a1.012,1.012,0,0,0,0-2.025H11.136a1.012,1.012,0,0,1,0-2.024ZM32.2,6.074,28.73,18.223H11.948L9.248,6.074Zm0,0" transform="translate(0 0)" fill="#6b6b6b"/>
+  <circle id="Ellipse_1" data-name="Ellipse 1" cx="3" cy="3" r="3" transform="translate(10.172 25)" fill="#6b6b6b"/>
+  <circle id="Ellipse_2" data-name="Ellipse 2" cx="3" cy="3" r="3" transform="translate(24.172 25)" fill="#6b6b6b"/>
+</svg>
