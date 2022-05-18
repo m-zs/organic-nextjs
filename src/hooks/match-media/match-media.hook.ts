@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { isBrowser } from "src/utils/common";
-import { useIsomorphicLayoutEffect } from "./isomorphic-layout-effect/isomorphic-layout-effect";
+import { useIsomorphicLayoutEffect } from "src/hooks/isomorphic-layout-effect/isomorphic-layout-effect";
 
 export const useMatchMedia = (query: string): boolean => {
   const [isMatchingMediaQuery, setIsMatchingMediaQuery] = useState(
