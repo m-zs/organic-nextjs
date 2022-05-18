@@ -1,6 +1,6 @@
 import type { PublishData } from "./publish";
 
-export interface AttributesData<T, D = void> {
+export interface AttributesData<T, D = unknown> {
   data: {
     id: number;
     attributes: T & D;
