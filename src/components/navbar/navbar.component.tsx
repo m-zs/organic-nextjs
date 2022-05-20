@@ -12,11 +12,11 @@ import * as S from "./navbar.styles";
 export type NavbarProps = NavbarData;
 
 export const Navbar: FC<NavbarProps> = ({ data }) => {
-  const mobile = useMatchMedia(theme.breakpoints.down("md"));
+  const mobile = useMatchMedia(`(max-width: ${theme.breakpoints.md})`);
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    if (!mobile) setActive(true);
+    setActive(!mobile);
   }, [mobile]);
 
   return (
