@@ -1,4 +1,3 @@
-import { Translation } from "next-i18next";
 import { createContext, FC, ReactNode, useContext } from "react";
 import { getPathValue } from "./localization.utils";
 
