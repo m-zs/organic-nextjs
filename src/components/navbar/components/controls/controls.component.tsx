@@ -2,8 +2,8 @@ import { FC, useState } from "react";
 import { useRouter } from "next/router";
 import { useLocalization } from "src/context/localization";
 import { defaultLocale } from "src/utils/const";
-import { Popper } from "src/components/popper/";
-import Pin from "src/assets/icons/pin.svg";
+import { Popper } from "src/components/popper";
+import { Pin } from "src/components/icons/pin.component";
 import * as S from "./controls.styles";
 
 export const Controls: FC = () => {
