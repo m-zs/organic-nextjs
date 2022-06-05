@@ -24,7 +24,9 @@ export const App: NextPage<AppProps> = ({ Component, pageProps }) => {
     >
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Navbar {...pageProps.data.layout.navbar} />
+        {pageProps?.data?.layout && (
+          <Navbar {...pageProps.data.layout.navbar} />
+        )}
         <Component {...pageProps.page} />
       </ThemeProvider>
     </LocalizationProvider>
