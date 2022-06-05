@@ -15,6 +15,12 @@
       }
     ],
     "@next/next/no-document-import-in-page": "off",
-    "@next/next/no-page-custom-font": "off"
+    "@next/next/no-page-custom-font": "off",
+    "jest/expect-expect": [
+      "error",
+      {
+        "assertFunctionNames": ["expect", "fc.assert", "cy.**.should"]
+      }
+    ]
   }
 }
