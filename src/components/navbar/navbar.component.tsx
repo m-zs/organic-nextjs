@@ -28,7 +28,7 @@ export const Navbar: FC<NavbarProps> = ({ data }) => {
 
         <Links links={data.attributes.links} toggled={active} />
         <Controls />
-        <S.HamburgerContainer>
+        <S.HamburgerContainer data-testid="menu-toggle-btn">
           <Hamburger
             size={20}
             color={theme.colors.common.white}
