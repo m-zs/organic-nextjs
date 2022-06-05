@@ -8,7 +8,7 @@ import * as S from "./controls.styles";
 
 export const Controls: FC = () => {
   const { t } = useLocalization();
-  const { pathname, replace, locales } = useRouter();
+  const { pathname, replace, locales, locale: currentLocale } = useRouter();
   const [localePicker, setLocalePicker] = useState<HTMLButtonElement | null>(
     null
   );
@@ -28,20 +28,31 @@ export const Controls: FC = () => {
 
         <Popper container={localePicker}>
           <S.PopperContent>
-            {locales?.map((locale) => (
-              <S.LocaleButton
-                key={locale}
-                role="button"
-                tabIndex={0}
-                onClick={() => {
-                  const path =
-                    locale === defaultLocale ? "" : locale + pathname;
-                  replace(path, path, { locale });
-                }}
-              >
-                {t(`locales.${locale}`)}
-              </S.LocaleButton>
-            ))}
+            {locales?.map((locale) => {
+              if (
+                currentLocale === locale ||
+                (!currentLocale && locale === defaultLocale)
+              ) {
+                return null;
+              }
+
+              return (
+                <S.LocaleButton
+                  data-testid="locale-btn"
+                  data-locale={locale}
+                  key={locale}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => {
+                    const path =
+                      locale === defaultLocale ? "" : locale + pathname;
+                    replace(path, path, { locale });
+                  }}
+                >
+                  {t(`locales.${locale}`)}
+                </S.LocaleButton>
+              );
+            })}
           </S.PopperContent>
         </Popper>
       </S.ControlButton>
